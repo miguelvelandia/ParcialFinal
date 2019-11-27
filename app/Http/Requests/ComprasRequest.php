@@ -6,14 +6,12 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ComprasRequest extends FormRequest
 {
-    
+
     public function authorize()
     {
         return true;
     }
 
-   
-     
     public function rules()
     {
         return [
@@ -22,7 +20,6 @@ class ComprasRequest extends FormRequest
             'proveedor_id'=> 'required',
         ];
     }
-
     public function attributes()
     {
         return [
@@ -34,13 +31,12 @@ class ComprasRequest extends FormRequest
     public function messages()
     {
          return [
-            'fecha.required'=> 'el :atribute es requerido',
-
-            'descripcion.required' => 'la :atribute es requerido',
-            'descripcion.numeric' => 'la :atribute debe ser numerico',
-            'descripcion.min' => 'la :atribute debe tener minimo un caracter y maximo 4',
+            'fecha.required'=> 'el :attribute es requerido',
+            'descripcion.required' => 'la :attribute es requerido',
+            'descripcion.numeric' => 'la :attribute debe ser numerico',
+            'descripcion.min' => 'la :attribute debe tener minimo un caracter y maximo 3',
             
-            'proveedor_id.required' => 'el :atribute es requerido',
+            'proveedor_id.required' => 'el :attribute es requerido',
         ]; 
     }
 }

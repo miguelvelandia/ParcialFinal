@@ -12,37 +12,33 @@ class ProductoRequest extends FormRequest
         return true;
     }
 
-    
     public function rules()
     {
         return [
-        	'nombre'=> 'required|min:3|max:50',
+
+            'nombre_producto'=> 'required|min:3|max:50',
             'descripcion'=> 'required|numeric|min:1|max:4',
-            'categoria_id'=> 'required',
             
         ];
     }
-     public function attributes()
+
+    public function attributes()
     {
         return [
-            'nombre'=> 'nombre',
-            'direccion'=> 'direccion',
-            'categoria_id'=> 'categoria',
-            
+            'nombre_producto'=> 'Nombre producto',
+            'descripcion'=> 'descripcion',
         ];
-}
+    }
     public function messages()
     {
          return [
-            'nombre.required'=> 'el :atribute es requerido',
-            'nombre.min' => 'el :atribute debe tener minimo 3 caracteres y maximo 50 caracteres'
-
-            'descripcion.required' => 'la :atribute es requerido',
-            'descripcion.numeric' => 'la :atribute debe ser numerico',
-            'descripcion.min' => 'la :atribute debe tener minimo un caracter y maximo 4',
-
-            'categoria_id.required' => 'el :atribute es requerido',
-            
-        ];
+            'nombre_producto.required'=> 'el :attribute es requerido',
+            'nombre_producto.min'=> 'el :attributes debe tener minimo 3 caracteres',
+            'descripcion.required' => 'la :attribute es requerido',
+            'descripcion.numeric' => 'la :attribute debe ser numerico',
+            'descripcion.min' => 'la :attribute debe tener minimo un caracter y maximo 4',
+        ]; 
     }
+
+    
 }
